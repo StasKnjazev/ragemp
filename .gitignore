@@ -4,5 +4,5 @@
 /client_packages/.listcache
 package-lock.json
 node_modules
-/src/client
 /src/web
+/client_packages/client.js

@@ -41,8 +41,6 @@ blips.load = function() {
 };
 
 blips.spawnInList = function() {
-    terminal.debug('blips.spawnInList();');
-
     this.list.forEach(blip => {
         mp.blips.new(blip.sprite, blip.position, {
             name: blip.name,
@@ -59,8 +57,6 @@ blips.spawnInList = function() {
 };
 
 blips.removeAll = function() {
-    terminal.debug('blips.removeAll();');
-
     this.list = [];
     mp.blips.forEach(blip => {
         blip.destroy();
