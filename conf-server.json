@@ -1,0 +1,13 @@
+{
+    "debug": true,
+    
+    "isTest": false,
+    "isWhiteList": false,
+
+    "mysql": {
+        "hostname": "localhost",
+        "username": "root",
+        "password": "",
+        "databasename": "basemode"
+    }
+}

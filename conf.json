@@ -1,0 +1,34 @@
+{
+	"announce": false,
+
+	"maxplayers": 500,
+	"name": "[ru][roleplay][voice]Basic Role Play Mode by aspid#1660 • dscrd.in/ragebasic",
+	"gamemode": "roleplay",
+	"language": "ru",
+	"url": false,
+
+	"voice-chat": true,
+	"allow-voice-chat-input": 1,
+	"voice-chat-sample-rate": 48000,
+
+	"encryption": false,
+	"stream-distance": 300.0,
+	"disallow-multiple-connections-per-ip": false,
+	"limit-time-of-connections-per-ip": 0,
+	"sync-rate": 40,
+	"max-ping": 320,
+	"min-fps": 20,
+	"enable-http-security": false,
+	"server-side-weapons-only-mode": true,
+	"api-threading-debugging": false,
+	"resources-compression-level": 1,
+	"synchronization-extrapolation-multiplier": 0.0,
+	"http-threads": 50,
+	"trigger-compression-logging": false,
+	"trigger-compression-training": false,
+	"create-fastdl-snapshot": false,
+	"disable-client-packages-ram-cache": false,
+
+	"nodejs": true,
+	"csharp": "disabled"
+}

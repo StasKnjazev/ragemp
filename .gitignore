@@ -1,0 +1,8 @@
+/bin
+/BugTrap-x64.dll
+/ragemp-server.exe
+/client_packages/.listcache
+package-lock.json
+node_modules
+/src/client
+/src/web
