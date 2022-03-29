@@ -1,8 +1,10 @@
 
 // REQUIRES
 
+const mysql = require('./mysql.js');
+const terminal = require('./terminal.js');
+
 require('./methods.js');
-require('./mysql.js');
 require('./terminal.js');
 
 // CODE
@@ -10,7 +12,9 @@ require('./terminal.js');
 let modules = {};
 
 modules.loadAll = function() {
+    terminal.debug('modules.loadAll();');
 
+    mysql.load();
 };
 
 module.exports = modules;

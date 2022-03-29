@@ -1,5 +1,4 @@
 
 // REQUIRES
 
-// CODE
-
+require('./playerJoin.js');

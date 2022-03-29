@@ -9,5 +9,5 @@ import world from './world/index.js';
 
 // CODE
 
-global.browser = mp.browsers.new('http://package/cef/index.html');
-global.browser.active = true;
+// global.browser = mp.browsers.new('http://package/cef/index.html');
+// global.browser.active = true;

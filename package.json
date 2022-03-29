@@ -6,10 +6,8 @@
   "scripts": {
     "abuild": "npm i & npm run abuild:client",
     "abuild:client": "cd ./src/client & npm i & npm run build",
-
     "build": "npm run build:client",
     "build:client": "cd ./src/client & npm run build",
-
     "start": "npm run start:client",
     "start:client": "cd ./src/client & npm run watch"
   },

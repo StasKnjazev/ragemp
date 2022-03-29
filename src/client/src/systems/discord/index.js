@@ -5,8 +5,8 @@
 
 let discord = exports;
 
-discord.name = '';
-discord.desc = '';
+discord.name = 'Basic Mode';
+discord.desc = 'by aspid#1660';
 
 discord.update = function(name, desc) {
     this.name = name;
