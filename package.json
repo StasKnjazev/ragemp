@@ -1,31 +1,32 @@
 {
-  "name": "ragemp-basicmode",
-  "version": "1.0.0",
+  "name": "server",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "abuild": "npm i & npm run abuild:client",
+    "abuild": "npm i & npm run abuild:client & npm run abuild:web",
     "abuild:client": "cd ./src/client & npm i & npm run build",
-    "build": "npm run build:client",
+    "abuild:web": "cd ./src/web & npm i & npm run build",
+
+    "build": "npm run build:client & npm run build:web",
     "build:client": "cd ./src/client & npm run build",
-    "start": "npm run start:client",
+    "build:web": "cd ./src/web & npm run build",
+    
+    "start:web": "cd ./src/web & npm run serve",
     "start:client": "cd ./src/client & npm run watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aspidemon/ragemp-basicmode.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "neaduptar",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aspidemon/ragemp-basicmode/issues"
-  },
-  "homepage": "https://github.com/aspidemon/ragemp-basicmode#readme",
   "dependencies": {
+    "colors": "^1.4.0",
+    "crypto": "^1.0.1",
+    "mysql": "^2.18.1",
+    "types-ragemp": "^0.1.1"
+  },
+  "devDependencies": {
     "@types/ragemp-c": "github:CocaColaBear/types-ragemp-c#v2.0",
     "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#v1.0",
-    "colors": "^1.4.0",
-    "mysql": "^2.18.1"
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }
