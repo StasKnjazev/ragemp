@@ -6,3 +6,5 @@ package-lock.json
 node_modules
 /src/web
 /client_packages/client.js
+/src/client/src/modules/tick.js
+/src/client/src/systems/auth.js

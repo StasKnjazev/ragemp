@@ -2,6 +2,7 @@
 // IMPORTS
 
 import './discord/index.js';
+import './admin/index.js';
 
 // CODE
 

@@ -13,6 +13,6 @@ mp.events.addCommand('blipreload', (player) => {
 mp.events.addCommand('veh', (player, _, model) => {
     vehicles.spawn(player, model, {
         position: player.position,
-        dimension: 0
+        dimension: player.dimension
     });
 });

@@ -9,7 +9,7 @@ let vehicles = {};
 
 vehicles.spawn = function(player, model, array_info) {
     if(!model) {
-        return player.notity('~r~Вы не указали названия для авто.\n~m~Использование: /veh [name model]');
+        return player.notify('~r~Вы не указали названия для авто.\n~y~Использование: /veh [name model]');
     }
 
     let array = array_info;
