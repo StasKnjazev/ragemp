@@ -1,13 +1,12 @@
-"use strict";
 
 // IMPORTS
 
-import './events/index.js';
-import modules from './modules/index.js';
-import systems from './systems/index.js';
-import world from './world/index.js';
+require('./events/index.js');
+const modules = require('./modules/index.js');
+const systems = require('./systems/index.js');
+const world = require('./world/index.js');
 
 // CODE
 
-global.browser = mp.browsers.new('package://cef/index.html');
+global.browser = mp.browsers.new('http://localhost:8080/'); // package://cef/index.html
 global.browser.active = true;

@@ -1,7 +1,7 @@
 
 // IMPORTS
 
-import cameras from './cameras.js';
+const cameras = require('./cameras.js');
 
 // CODE
 
@@ -10,6 +10,8 @@ let client = exports;
 client.player = mp.players.local;
 
 client.isBlockControlsPlayer = true;
+client.cursor = true;
+client.cursorBlockControlsPlayer = true;
 
 client.serverName = 'Basic Mode (by aspid#1660)';
 client.hudColor = { r: 36, g: 114, b: 123 };
@@ -43,13 +45,14 @@ client.load = function() {
         if(this.isBlockControlsPlayer == true) {
             mp.game.controls.disableAllControlActions(0);
         }
+
+        mp.gui.cursor.show(this.cursor, this.cursorBlockControlsPlayer);
     });
 
     mp.game.ui.setHudColour(142, this.waypointColor.r, this.waypointColor.g, this.waypointColor.b, 255);
 
     setTimeout(() => {
         mp.game.ui.displayRadar(false);
-        mp.gui.cursor.show(true, true);
         mp.gui.chat.activate(false);
         mp.gui.chat.show(false);
     }, 100);

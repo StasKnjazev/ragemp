@@ -1,7 +1,7 @@
 
 // IMPOERS
 
-import stamina from './stamina.js';
+const stamina = require('./stamina.js');
 
 // CODE
 

@@ -1,6 +1,6 @@
 
 // IMPORTS
 
-import './cameras.js';
-import './client.js';
-import './tick.js';
+require('./cameras.js');
+require('./client.js');
+require('./tick.js');

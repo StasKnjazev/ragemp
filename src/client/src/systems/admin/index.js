@@ -1,4 +1,4 @@
 
 // IMPORTS
 
-import './noclip.js';
+require('./noclip.js');

@@ -1,4 +1,5 @@
 
 // IMPORTS
 
-import './render.js';
+require('./render.js');
+require('./auth.js');

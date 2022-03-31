@@ -1,8 +1,7 @@
 
 // IMPORTS
 
-import discord from '../systems/discord/index.js';
-import stamina from '../systems/player/stamina.js';
+const discord = require('../systems/discord/index.js');
 
 // CODE
 
