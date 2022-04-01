@@ -12,6 +12,32 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+-- Дамп структуры для таблица basemode.accounts
+CREATE TABLE IF NOT EXISTS `accounts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `reg_socialClub_id` text NOT NULL,
+  `reg_socialClub_name` text NOT NULL,
+  `reg_socialClub_serial` text NOT NULL,
+  `last_socialClub_serial` text NOT NULL,
+  `reg_hwid` text NOT NULL,
+  `last_hwid` text NOT NULL,
+  `reg_ip` text NOT NULL,
+  `last_ip` text NOT NULL,
+  `reg_date` text NOT NULL,
+  `last_date` text NOT NULL,
+  `isWhiteList` tinyint(4) NOT NULL DEFAULT '0',
+  `whitelist_password` text NOT NULL,
+  `isBlackList` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы basemode.accounts: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
+
 -- Дамп структуры для таблица basemode.blips
 CREATE TABLE IF NOT EXISTS `blips` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
