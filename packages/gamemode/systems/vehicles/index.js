@@ -21,6 +21,8 @@ vehicles.spawn = function(player, model, array_info) {
     let vehicle = mp.vehicles.new(model, new mp.Vector3(array.position));
     vehicle.dimension = array.dimension;
 
+    vehicle.setColorRGB(133, 63, 8, 133, 63, 8);
+
     player.putIntoVehicle(vehicle, configs.driverSeat);
 };
 

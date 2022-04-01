@@ -46,6 +46,8 @@ cameras.destroy = () => {
         this.camera2.destroy();
         this.camera2 = null;
     }
+
+    return this.renderScriptCams(false);
 };
 
 cameras.shake = function(type, amplitude) {

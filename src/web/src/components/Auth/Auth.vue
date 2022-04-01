@@ -15,7 +15,10 @@ export default {
             reg_email: '',
             reg_username: '',
             reg_password: '',
-            reg_rpassword: ''
+            reg_rpassword: '',
+
+            login_username: '',
+            login_password: ''
         }
     },
 
@@ -60,24 +63,51 @@ export default {
                     }, 290);
                 }, timeout * 1000);
             }
+
+            // let audio = new Audio();
+            // audio.preload = 'auto';
+            // audio.src = 'https://cdn.discordapp.com/attachments/959123228725485579/959123437312430090/error.mp3';
+            // audio.play();
         },
 
         sendRegister: function() {
             if(this.reg_username == '' || this.reg_username == ' ' || this.reg_password == '' || this.reg_password == ' ' || this.reg_email == '' || this.reg_email == ' ' || this.reg_rpassword == '' || this.reg_rpassword == ' ') {
                 this.sendNotify('Пожалуйста запоните пустые поля!');
             } else {
-                if(this.reg_rpassword == this.reg_password) {
-                    let array = JSON.stringify({
-                        email: this.reg_email,
-                        username: this.reg_username,
-                        password:  this.reg_password
-                    });
-
-                    global.mp.trigger('client.auth:sendRegister', array);
+                if(this.validateEmail(this.reg_email) == false) {
+                    this.sendNotify('Вы ввели некорректную или неверную почту');
                 } else {
-                    this.sendNotify('Введенные Вами пароли не совпадают');
+                    if(this.reg_rpassword != this.reg_password) {
+                        this.sendNotify('Введенные Вами пароли не совпадают');
+                    } else {
+                        let array = JSON.stringify({
+                            email: this.reg_email,
+                            username: this.reg_username,
+                            password:  this.reg_password
+                        });
+
+                        global.mp.trigger('client.auth:sendRegister', array);
+                    }
                 }
             }
+        },
+
+        sendLogin: function() {
+            if(this.login_username == '' || this.login_username == ' ' || this.login_password == '' || this.login_password == ' ') {
+                this.sendNotify('Пожалуйста запоните пустые поля!');
+            } else {
+                let array = JSON.stringify({
+                    username: this.login_username,
+                    password:  this.login_password
+                });
+
+                global.mp.trigger('client.auth:sendLogin', array);
+            }
+        },
+
+        validateEmail: function(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
         }
     },
 
@@ -89,8 +119,10 @@ export default {
 
 <template>
     <div id="auth" v-if="visible">
-        <!-- NOTIFY -->
+        <!-- AUDIO -->
+        <!-- <audio ref="audio" src="https://cdn.discordapp.com/attachments/959123228725485579/959123307544846396/background_music.mp3" preload loop id="audio" autoplay="autoplay"></audio> -->
 
+        <!-- NOTIFY -->
         <div class="notifys-box">
             <div class="notify-box" v-for="item in notify_list" :key="item.u" :id="'notify' + item.id">
                 <div class="notify-icon">
@@ -101,19 +133,18 @@ export default {
         </div>
 
         <!-- AUTH -->
-
         <div class="auth-box" :class="page == 0 ? 'showBlock' : 'hideBlock'" v-if="page_id == 0">
             <img src="./img/logotype.png" alt="" />
 
             <div class="title">Авторизация</div>
 
             <div class="inputs-box">
-                <input class="input-box" spellcheck="false" type="text" placeholder="Логин" />
-                <input class="input-box" spellcheck="false" type="password" placeholder="Пароль" />
+                <input class="input-box" spellcheck="false" type="text" placeholder="Логин" v-model="login_username" />
+                <input class="input-box" spellcheck="false" type="password" placeholder="Пароль" v-model="login_password" />
             </div>
 
             <div class="buttons-box">
-                <div class="button-next">Войти</div>
+                <div class="button-next" @click="sendLogin()">Войти</div>
             </div>
 
             <div class="info-register-box" @click="sendPage(1)">Нет аккаунта?</div>
@@ -297,6 +328,8 @@ export default {
 .info-register-box {
     font-family: 'Montserrat Regular';
     font-size: 14px;
+
+    margin-top: 15px;
 
     color: rgb(252, 252, 252, 0.35);
 

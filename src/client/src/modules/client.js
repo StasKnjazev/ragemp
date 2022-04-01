@@ -10,12 +10,12 @@ let client = exports;
 client.player = mp.players.local;
 
 client.isBlockControlsPlayer = true;
-client.cursor = true;
-client.cursorBlockControlsPlayer = true;
+client.cursor = false;
+client.cursorBlockControlsPlayer = false;
 
 client.serverName = 'Basic Mode (by aspid#1660)';
-client.hudColor = { r: 36, g: 114, b: 123 };
-client.waypointColor = { r: 36, g: 114, b: 123 };
+client.hudColor = { r: 235, g: 127, b: 44 };
+client.waypointColor = { r: 235, g: 127, b: 44 };
 
 client.firstLineText = `${mp.players.local.name}`;
 client.secondLineText = 'Basic Mode';
@@ -46,7 +46,9 @@ client.load = function() {
             mp.game.controls.disableAllControlActions(0);
         }
 
-        mp.gui.cursor.show(this.cursor, this.cursorBlockControlsPlayer);
+        // if(this.cursor && (this.cursor = false)) {
+        //     mp.gui.cursor.show(this.cursor, this.cursorBlockControlsPlayer);
+        // }
     });
 
     mp.game.ui.setHudColour(142, this.waypointColor.r, this.waypointColor.g, this.waypointColor.b, 255);
@@ -55,6 +57,24 @@ client.load = function() {
         mp.game.ui.displayRadar(false);
         mp.gui.chat.activate(false);
         mp.gui.chat.show(false);
+
+        mp.gui.cursor.show(true, true);
+    }, 100);
+};
+
+client.close = function() {
+    this.isBlockControlsPlayer = false;
+    // this.cursor = false;
+    // this.cursorBlockControlsPlayer = false;
+    mp.gui.cursor.show(false, false);
+
+    this.player.freezePosition(false);
+    cameras.destroy();
+
+    setTimeout(() => {
+        mp.game.ui.displayRadar(true);
+        mp.gui.chat.activate(true);
+        mp.gui.chat.show(true);
     }, 100);
 };
 

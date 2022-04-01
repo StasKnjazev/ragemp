@@ -12,7 +12,9 @@
 █▄█ ░█░   █▀█ ▄█ █▀▀ █ █▄▀
 
 Discord: aspid#1660
-Discord-сервер с помощью: https://discord.gg/aCPqKSZxsE
+Discord-сервер сообщества Basic Mode: https://dscrd.in/ragebasic
+
+Discord-сервер наших партнеров: https://dscrd.in/gamecode
 
 */
 

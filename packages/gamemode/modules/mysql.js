@@ -42,7 +42,7 @@ mysql.executeQuery = function (query, values, callback) {
         return false;
     }
 
-    let preTime = new Date();
+    // let preTime = new Date().getDate();
 
     try {
         // terminal.debug(query);
@@ -50,9 +50,11 @@ mysql.executeQuery = function (query, values, callback) {
         this.main.getConnection((err, connection) => {
             try {
                 if (!err) {
-                    connection.query(query, values, function (err, rows, fields) {
-                        let postTime = new Date();
-                        terminal.debug(query, `${postTime - preTime}ms`);
+                    connection.query({ sql: query, timeout: 60000 }, values, function (err, rows, fields) {
+                        // try {
+                        //     let postTime = new Date().getDate();
+                        //     terminal.debug(query, `${postTime - preTime}ms`);
+                        // } catch(e) {}
                         
                         try {
                             if (!err) {
