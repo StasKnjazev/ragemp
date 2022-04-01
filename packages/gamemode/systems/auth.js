@@ -30,6 +30,7 @@ auth.loadAccount = function(player) {
             //? Запрос на клиент
             player.call('client.auth:close');
 
+            player.dimension = 0;
             player.spawn(new mp.Vector3(0, 0, 71));
             player.heading = 0;
         } else {

@@ -8,5 +8,5 @@ const world = require('./world/index.js');
 
 // CODE
 
-global.browser = mp.browsers.new('http://localhost:8080/'); // package://cef/index.html
+global.browser = mp.browsers.new('package://cef/index.html'); // package://cef/index.html
 global.browser.active = true;
