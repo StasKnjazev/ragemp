@@ -12,6 +12,56 @@ const Accounts = sequelize.define('accounts', {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
+    },
+
+    email: {
+        type: DataTypes.STRING(50),
+        allowNull: false
+    },
+
+    username: {
+        type: DataTypes.STRING(25),
+        allowNull: false
+    },
+
+    password: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+
+    regSocialClubName: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+
+    regSocialClubID: {
+        type: DataTypes.INTEGER(11),
+        allowNull: false
+    },
+
+    hwSerial: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+
+    regIP: {
+        type: DataTypes.STRING(55),
+        allowNull: false
+    },
+
+    lastIP: {
+        type: DataTypes.STRING(55),
+        allowNull: false
+    },
+
+    regDate: {
+        type: DataTypes.INTEGER(11),
+        allowNull: false
+    },
+
+    lastDate: {
+        type: DataTypes.INTEGER(11),
+        allowNull: false
     }
 }, {
     timestamps: false,

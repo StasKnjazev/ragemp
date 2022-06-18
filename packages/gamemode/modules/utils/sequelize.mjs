@@ -13,16 +13,14 @@ import Method from '../methods.mjs';
 // CODE
 
 export let sequelize = null;
-export let db = [];
+export const db = [];
 
 class DataBase {
-    static async Initialization() {
+    static Initialization() {
         Terminal.sendDebugDetailed('DataBase.initialization();');
         
         try {
-            if(await this.hasConnection()) {
-                Terminal.sendDone('[Sequlize] Соединение с базой данных успешно');
-
+            if(this.hasConnection()) {
                 sequelize = new Sequelize({
                     dialect: 'mysql',
 
@@ -33,8 +31,6 @@ class DataBase {
 
                     logging: mp.config.database.debug ? console.log : false
                 });
-
-                await this.load();
             }
         } catch(e) {
             console.log(e);
@@ -50,23 +46,18 @@ class DataBase {
             database: mp.config.database.name
         });
 
-        dbStatus.getConnection(async (err, connection) => {
-            try {
-                if(!err) {
-                    connection.query('SHOW TABLES', (err, rows, fields) => {
-                        try {
-                            if(!err) {
-                                status = true;
-                            } else {
-                                Terminal.sendError('[Sequelize] При соединении произошла ошибка', err);
-                            }
-                        } catch(e) {
-                            console.log(e);
-                        }
-                    });
-                }
-            } catch(e) {
-                console.log(e);
+        dbStatus.getConnection((err, connection) => {
+            if(!err) {
+                connection.query('SHOW TABLES', (err, rows, fields) => {
+                    if(!err) {
+                        Terminal.sendDone('[Sequlize] Соединение с базой данных успешно');
+                        status = true;
+
+                        this.load();
+                    }
+                });
+            } else {
+                Terminal.sendError('[Sequelize] При соединении произошла ошибка', err);
             }
         });
 
