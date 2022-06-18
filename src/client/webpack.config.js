@@ -5,11 +5,11 @@ module.exports = {
     mode: 'production',
     
     entry: {
-        main: path.resolve(__dirname, './src/index.js'),
+        main: path.resolve(__dirname, './src/index.mjs'),
     },
 
     output: {
         path: path.resolve(__dirname, '../.././client_packages/'),
-        filename: 'client.js',
+        filename: 'client.js'
     }
 }

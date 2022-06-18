@@ -1,4 +1,19 @@
 {
+	"dev": false,
+	"debug": true,
+	"debugDetailed": true,
+
+	"isTest": false,
+	"isWhiteList": false,
+
+	"database": {
+		"debug": false,
+		"host": "localhost",
+		"user": "root",
+		"password": "",
+		"name": "basemode"
+	},
+
 	"announce": false,
 
 	"maxplayers": 500,

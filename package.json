@@ -7,11 +7,9 @@
     "abuild": "npm i & npm run abuild:client & npm run abuild:web",
     "abuild:client": "cd ./src/client & npm i & npm run build",
     "abuild:web": "cd ./src/web & npm i & npm run build",
-
     "build": "npm run build:client & npm run build:web",
     "build:client": "cd ./src/client & npm run build",
     "build:web": "cd ./src/web & npm run build",
-    
     "start:web": "cd ./src/web & npm run serve",
     "start:client": "cd ./src/client & npm run watch"
   },
@@ -20,7 +18,8 @@
   "dependencies": {
     "colors": "^1.4.0",
     "crypto": "^1.0.1",
-    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.0",
     "types-ragemp": "^0.1.1"
   },
   "devDependencies": {

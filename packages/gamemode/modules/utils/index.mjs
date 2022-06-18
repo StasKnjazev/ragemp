@@ -1,0 +1,4 @@
+
+// IMPORTS
+
+import './sequelize.mjs';
