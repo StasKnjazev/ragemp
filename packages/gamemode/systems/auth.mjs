@@ -14,6 +14,30 @@ class Auth {
         });
     }
 
+    static async getAccountInDataBaseByID(id) {
+        return await db.Accounts.findOne({
+            where: {
+                id: id
+            }
+        });
+    }
+
+    static async getAccountInDataBaseByUsername(username) {
+        return await db.Accounts.findOne({
+            where: {
+                username: username
+            }
+        });
+    }
+
+    static async getAccountInDataBaseByEmail(email) {
+        return await db.Accounts.findOne({
+            where: {
+                email: email
+            }
+        });
+    }
+
     static async hasEmailRegistered(email) {
         let found = await db.Accounts.findOne({
             where: {
@@ -41,13 +65,13 @@ class Auth {
             email: options.email,
             username: options.username,
             password: options.password,
-            regSocialClubID: options.regSocialClubID,
+            regSocialClubID: Number(options.regSocialClubID),
             regSocialClubName: options.regSocialClubName,
             hwSerial: options.hwSerial,
             regIP: options.regIP,
             lastIP: options.lastIP,
-            regDate: options.regDate,
-            lastDate: options.lastDate
+            regDate: Number(options.regDate),
+            lastDate: Number(options.lastDate)
         });
         
         return true;

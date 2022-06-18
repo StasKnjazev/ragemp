@@ -14,5 +14,11 @@ module.exports = defineConfig({
       localeDir: 'locales',
       fullInstall: true
     }
+  },
+
+  configureWebpack: {
+    devServer: {
+      historyApiFallback: true
+    }
   }
 })
