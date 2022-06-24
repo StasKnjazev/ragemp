@@ -5,7 +5,6 @@ import { createApp } from 'vue';
 import App from './App.vue';
 
 import { createI18n } from 'vue-i18n/index';
-import { createEventEmitter } from './EventEmmiter.mjs';
 
 import router from './router.mjs';
 
@@ -35,6 +34,5 @@ let VueI18n = createI18n({
 
 let app = createApp(App);
 app.config.globalProperties.$mp = window.mp;
-app.config.globalProperties.$events = createEventEmitter(false);
 
 app.use(VueI18n).use(router).mount('#app');

@@ -1,6 +1,4 @@
 
 // IMPORTS
 
-// CODE
-
-mp.discord.update('Basic RolePlay Mode', 'by aspid#1660');
+import './modules/index.mjs';

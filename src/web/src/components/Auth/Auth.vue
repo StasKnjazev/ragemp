@@ -15,17 +15,20 @@ export default {
 
     methods: {
 
+    },
+
+    mounted() {
+        
     }
 }
 </script>
 
 <template>
     <div id="auth">
-        ХУЙ ТЕБЕ
-        <router-view />
+        
     </div>
 </template>
 
 <style lang="scss" scoped>
-
+    @import url(./style.scss);
 </style>

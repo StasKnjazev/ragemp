@@ -10,6 +10,7 @@
     "build": "npm run build:client & npm run build:web",
     "build:client": "cd ./src/client & npm run build",
     "build:web": "cd ./src/web & npm run build",
+    "start": "concurrently \"npm run start:web\" \"npm run start:client\"",
     "start:web": "cd ./src/web & npm run serve",
     "start:client": "cd ./src/client & npm run watch"
   },
@@ -17,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
+    "concurrently": "^7.2.2",
     "crypto": "^1.0.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.0",

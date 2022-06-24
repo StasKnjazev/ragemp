@@ -22,4 +22,3 @@ try {
 } catch(e) {
     mp.console.logError(`${e}`);
 }
-
