@@ -15,20 +15,16 @@ export default {
 
     methods: {
 
-    },
-
-    mounted() {
-        
     }
 }
 </script>
 
 <template>
     <div id="auth">
-        
+        <img src="./img/logotype.png" alt="">
     </div>
 </template>
 
 <style lang="scss" scoped>
-    @import url(./style.scss);
+    @import url(./style.css);
 </style>

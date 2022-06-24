@@ -90,3 +90,10 @@
     font-family: 'Montserrat ThinItalic';
     src: url(./Montserrat/Montserrat-ThinItalic.ttf);
 }
+
+/* ? Intro */
+
+@font-face {
+    font-family: 'Intro';
+    src: url(./Intro/Intro.otf);
+}
