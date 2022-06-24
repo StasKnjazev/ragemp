@@ -2,6 +2,8 @@
 <script>
 import './fonts/style.css';
 
+import Auth from './components/Auth/Auth.vue';
+
 export default {
     name: 'App',
 
@@ -16,14 +18,16 @@ export default {
     },
 
     components: {
-
+        Auth
     }
 }
 </script>
 
 <template>
     <div id="app">
-        <router-view />
+        <!-- <router-view /> -->
+
+        <Auth />
     </div>
 </template>
 

@@ -3,7 +3,6 @@
 
 import { createRouter, createWebHistory } from "vue-router";
 
-import App from './App.vue';
 import Auth from './components/Auth/Auth.vue';
 
 // CODE
@@ -11,12 +10,16 @@ import Auth from './components/Auth/Auth.vue';
 const routes = [
     {
         path: '/',
-        component: App
+        component: Auth
     },
 
     {
         path: '/auth',
-        component: Auth
+        component: Auth,
+        
+        props: route => ({
+            username: route.query.username
+        })
     },
     {
         path: "/:catchAll(.*)",

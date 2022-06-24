@@ -36,7 +36,7 @@
 	"enable-http-security": false,
 	"server-side-weapons-only-mode": true,
 	"api-threading-debugging": false,
-	"allow-cef-debugging": false,
+	"allow-cef-debugging": true,
 	"resources-compression-level": 1,
 	"synchronization-extrapolation-multiplier": 0.0,
 	"http-threads": 50,

@@ -97,3 +97,15 @@
     font-family: 'Intro';
     src: url(./Intro/Intro.otf);
 }
+
+/* ? Inter */
+
+@font-face {
+    font-family: 'Inter Regular';
+    src: url(./Inter/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Inter Medium';
+    src: url(./Inter/Inter-Medium.ttf);
+}

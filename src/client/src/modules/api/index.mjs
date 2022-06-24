@@ -2,6 +2,7 @@
 // IMPORTS
 
 import './Browser.mjs';
+import './Camera.mjs';
 
 // CODE
 
