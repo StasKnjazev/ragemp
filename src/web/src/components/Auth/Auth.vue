@@ -13,12 +13,28 @@ export default {
     data() {
         return {
             visible: true,
-            page: 'register'
+            page: null,
+
+            defaultLogin: null
         }
     },
 
     methods: {
 
+    },
+
+    mounted() {
+        this.$mp.events.add('cef.auth.visible:set', (state) => {
+            this.visible = state;
+        });
+
+        this.$mp.events.add('cef.auth.page:set', (page) => {
+            this.page = page;
+        });
+
+        this.$mp.events.add('cef.auth.default:username:send', (username) => {
+            this.defaultLogin = username;
+        });
     },
 
     components: {
