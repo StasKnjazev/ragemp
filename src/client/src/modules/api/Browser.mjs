@@ -3,8 +3,14 @@
 
 // CODE
 
+export let mainBrowser = null;
+
 class Browser {
     static list = [];
+
+    static getByName(name) {
+        return this.list.find(element => element.name == name);
+    }
 
     // CONSTRUCTOR
     #handle;
@@ -12,8 +18,8 @@ class Browser {
     constructor(name, path, { isDev = false } = {}) {
         if(isDev) path = 'http://localhost:8080/';
 
-        this.#handle = mp.browsers.new(path.toString());
-        this.#handle.active = true;
+        this.#handle = mp.browsers.new(String(path));
+        this.#handle.active = false;
 
         this.name = name;
         Browser.list.push(this);
@@ -38,12 +44,24 @@ class Browser {
     set path(url) {
         this.#handle.url = url.toString();
     }
+
+    set active(state) {
+        this.#handle.active = state;
+    }
+
+    get active() {
+        return this.#handle.active;
+    }
 }
 
-export let mainBrowser = new Browser('default', '', {
-    isDev: true
-});
-
 //? EVENTS
+mp.events.add('client.browser:create', (path, dev) => {
+    mainBrowser = new Browser('default', path, {
+        isDev: Boolean(dev)
+    });
+    mainBrowser.active = true;
+
+    mp.console.logInfo(Browser.getByName('default'));
+});
 
 export default Browser;

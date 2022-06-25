@@ -1,7 +1,7 @@
 
 // IMPORTS
 
-// import './Browser.mjs';
+import './Browser.mjs';
 // import './Camera.mjs';
 import { DiscordPresence } from './Discord.mjs';
 
