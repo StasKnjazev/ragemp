@@ -22,7 +22,7 @@ mp.events.addCommand('reg', async (player, _, email, username, password, rpasswo
         lastDate: 5
     });
 
-    return player.notify(`~g~Вы создали аккаунт, ${username}`)
+    return player.notify(`~g~Вы создали аккаунт, ${username}`);
 });
 
 mp.events.addCommand('login', async (player, _, username, password) => {

@@ -48,12 +48,12 @@ class DataBase {
 
         dbStatus.getConnection((err, connection) => {
             if(!err) {
-                connection.query('SHOW TABLES', (err, rows, fields) => {
+                connection.query('SHOW TABLES', async (err, rows, fields) => {
                     if(!err) {
                         Terminal.sendDone('[Sequlize] Соединение с базой данных успешно');
                         status = true;
 
-                        this.load();
+                        await this.load();
                     }
                 });
             } else {
