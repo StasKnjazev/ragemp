@@ -50,7 +50,7 @@ class WhiteList {
     static list = [];
 
     static async load() {
-        await WTL.loadDataBase();
+        if(mp.config.isWhiteList) await WTL.loadDataBase();
     }
 
     static async get(socialClubID) {

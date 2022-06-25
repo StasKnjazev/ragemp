@@ -1,9 +1,10 @@
 
 // IMPORTS
 
-import './Browser.mjs';
-import './Camera.mjs';
+// import './Browser.mjs';
+// import './Camera.mjs';
+import { DiscordPresence } from './Discord.mjs';
 
 // CODE
 
-mp.discord.update('Basic RolePlay Mode', 'by aspid#1660');
+DiscordPresence.set('Basic RolePlay Mode', 'by aspid#1660');

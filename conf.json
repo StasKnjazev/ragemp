@@ -7,7 +7,7 @@
 	"isWhiteList": false,
 
 	"database": {
-		"debug": true,
+		"debug": false,
 		"host": "localhost",
 		"user": "root",
 		"password": "",
