@@ -27,8 +27,6 @@
   },
   "devDependencies": {
     "@types/ragemp-c": "github:CocaColaBear/types-ragemp-c#v2.0",
-    "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#v1.0",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#v1.0"
   }
 }

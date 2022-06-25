@@ -19,6 +19,8 @@
 - Sequelize (__https://sequelize.org/__);
 - Colors (__https://www.npmjs.com/package/colors__);
 - Crypto (__https://www.npmjs.com/package/crypto__);
+- ReadLine (__https://www.npmjs.com/package/readline__);
+- Natives Base (__https://github.com/aspidemon/ragemp-natives__);
 - Vue 3 (__https://vuejs.org/__);
 
 Прочие команды:
