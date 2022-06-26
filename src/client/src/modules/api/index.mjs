@@ -2,7 +2,9 @@
 // IMPORTS
 
 import './Browser.mjs';
-// import './Camera.mjs';
+import './User.mjs';
+import './Camera.mjs';
+
 import { DiscordPresence } from './Discord.mjs';
 
 // CODE
