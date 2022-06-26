@@ -11,7 +11,7 @@ class User {
     }
 
     static isDeath() {
-        return localPlayer.health <= 0 ? true : false;
+        return localPlayer.getHealth() <= 0 ? true : false;
     }
 
     static getPosition() {
@@ -19,19 +19,19 @@ class User {
     }
 
     static getHealth() {
-        return localPlayer.health;
+        return localPlayer.getHealth();
     }
 
     static getArmour() {
-        return localPlayer.armour;
+        return localPlayer.getArmour();
     }
 
     static getHeading() {
-        return localPlayer.heading;
+        return localPlayer.getHeading();
     }
 
     static getAlpha() {
-        return localPlayer.alpha;
+        return localPlayer.getAlpha();
     }
 
     static setAlpha(number, skin = false) {
@@ -47,12 +47,12 @@ class User {
     }
 
     /**
-        * Возвращает название сиденья ("driver", "frontleft", "backleft", "backright") или вернет null если игрок не в автомобиле
+        * Возвращает название сиденья ("driver", "frontright", "backleft", "backright") или вернет null если игрок не в автомобиле
     */
 
     static isVehicle() {
         if(localPlayer.vehicle.getPedInSeat(0)) return 'driver';
-        if(localPlayer.vehicle.getPedInSeat(1)) return 'frontleft';
+        if(localPlayer.vehicle.getPedInSeat(1)) return 'frontright';
         if(localPlayer.vehicle.getPedInSeat(2)) return 'backleft';
         if(localPlayer.vehicle.getPedInSeat(3)) return 'backright';
         return null;

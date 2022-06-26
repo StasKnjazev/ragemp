@@ -7,7 +7,7 @@ import { db } from "../utils/sequelize.mjs";
 // CODE
 
 class WTL {
-    static async loadDataBase() {
+    static async loadInDataBase() {
         Terminal.sendDebugDetailed('WhiteList.load();');
 
         let whitelist = await db.WhiteList.findAll();
@@ -19,7 +19,7 @@ class WTL {
         // Terminal.sendInfo('[WhiteList] List -', WhiteList.list);
     }
 
-    static async getDataBase(socialClubID) {
+    static async getInDataBase(socialClubID) {
         return await db.WhiteList.findOne({
             where: {
                 socialClubID
@@ -27,7 +27,7 @@ class WTL {
         });
     }
 
-    static async addDataBase(socialClubID) {
+    static async addToDataBase(socialClubID) {
         if(await this.getDataBase(socialClubID) == null) {
             await db.WhiteList.create({
                 socialClubID
@@ -35,7 +35,7 @@ class WTL {
         }
     }
 
-    static async removeDataBase(socialClubID) {
+    static async removeInDataBase(socialClubID) {
         if(await this.getDataBase(socialClubID) != null) {
             await db.WhiteList.destroy({
                 where: {
@@ -61,7 +61,7 @@ class WhiteList {
         let found = await this.get(socialClubID);
         if(found) return Terminal.sendInfo('[WhiteList] Этот SocialClub уже состоит в списке.');
 
-        await WTL.addDataBase(socialClubID);
+        await WTL.addToDataBase(socialClubID);
         this.list.push(parseInt(socialClubID));
 
         // console.log(WhiteList.list);
@@ -70,7 +70,7 @@ class WhiteList {
     static async remove(socialClubID) {
         let foundIndex = await this.get(socialClubID);
         if(foundIndex != -1) {
-            await WTL.removeDataBase(socialClubID);
+            await WTL.removeInDataBase(socialClubID);
             return this.list.slice(foundIndex, 1);
         }
 
