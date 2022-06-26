@@ -1,13 +1,12 @@
 
 // IMPORTS
 
-import User from "../modules/api/User.mjs";
 import WhiteList from "../modules/api/WhiteList.mjs";
 
 // CODE
 
 mp.events.add('playerJoin', async (player) => {
-    player.model = mp.joaat('mp_m_freemode_01');
+    // player.model = mp.joaat('mp_m_freemode_01');
 
     player.call('client.browser:create', ['http://package/cef/index.html', mp.config.dev]);
 

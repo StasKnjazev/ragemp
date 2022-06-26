@@ -51,7 +51,7 @@ export default {
         <Login v-if="page == 'login'" />
         <Register v-if="page == 'register'" />
 
-        <div class="background"></div>
+        <!-- <div class="background"></div> -->
     </div>
 </template>
 
@@ -72,16 +72,16 @@ export default {
     background: linear-gradient(124.27deg, rgba(6, 6, 6, 0.9025) 0%, rgba(21, 21, 21, 0.8075) 68.14%);
 }
 
-.background {
-    position: absolute;
+// .background {
+//     position: absolute;
 
-    width: 100%;
-    height: 100%;
+//     width: 100%;
+//     height: 100%;
 
-    background-image: url(./img/background.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+//     background-image: url(./img/background.png);
+//     background-size: 100% 100%;
+//     background-repeat: no-repeat;
 
-    z-index: -1;
-}
+//     z-index: -1;
+// }
 </style>

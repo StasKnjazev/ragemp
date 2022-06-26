@@ -4,7 +4,7 @@ export default {
     name: 'Login',
 
     props: {
-
+        
     },
 
     data() {
