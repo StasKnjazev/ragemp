@@ -16,7 +16,7 @@ class Browser {
     #handle;
 
     constructor(name, path, { isDev = false } = {}) {
-        if(isDev) path = 'http://localhost:8080/';
+        if(isDev) path = 'http://localhost:22008/';
 
         this.#handle = mp.browsers.new(String(path));
         this.#handle.active = false;

@@ -64,7 +64,7 @@ class WhiteList {
         await WTL.addDataBase(socialClubID);
         this.list.push(parseInt(socialClubID));
 
-        console.log(WhiteList.list);
+        // console.log(WhiteList.list);
     }
 
     static async remove(socialClubID) {

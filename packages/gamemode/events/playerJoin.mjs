@@ -1,6 +1,7 @@
 
 // IMPORTS
 
+import User from "../modules/api/User.mjs";
 import WhiteList from "../modules/api/WhiteList.mjs";
 
 // CODE

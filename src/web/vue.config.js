@@ -5,6 +5,14 @@ module.exports = defineConfig({
 
   outputDir: "../.././client_packages/cef",
 
+  devServer: {
+    open: process.platform === 'darwin',
+    host: 'localhost',
+    port: 22008,
+    https: false,
+    hot: false
+  },
+
   publicPath: './',
 
   pluginOptions: {

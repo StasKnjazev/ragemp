@@ -16,6 +16,6 @@ export async function loadAll() {
 
     DataBase.Initialization();
     
-    await Method.sleep(300);
+    await Method.sleep(500);
     WhiteList.load();
 }
