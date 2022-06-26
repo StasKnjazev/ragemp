@@ -14,6 +14,14 @@ class User {
         return this.getByID(player.id);
     }
 
+    static setHealth(player, health = 1) {
+        player.health = parseInt(health);
+    }
+
+    static setArmour(player, number = 1) {
+        player.setArmour(parseInt(number));
+    }
+
     // CONSTRUCTOR
     #handle;
     #loggined = false;
@@ -45,6 +53,14 @@ class User {
 
     isLoggined() {
         return this.#loggined;
+    }
+
+    set position(pos) {
+        this.#handle.position = new mp.Vector3(pos.x, pos.y, pos.z);
+    }
+    
+    get position() {
+        return this.#handle.position;
     }
 }
 

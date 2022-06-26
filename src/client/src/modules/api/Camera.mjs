@@ -3,9 +3,34 @@
 
 // CODE
 
-let cam = mp.cameras.new('default', new mp.Vector3(1, 1, 1), new mp.Vector3(0, 0, 0), 10);
-cam.setActive(true);
+let prevCamera = null;
+export let activeCamera = null;
+let nextCamera = null;
 
-mp.game.cam.renderScriptCams(true, false, 0, false, false);
+class Camera {
+    static list = [];
 
-cam.pointAtCoord(1, 1, 1);
+    // CONSTRUCTOR
+    #handle;
+
+    constructor(name = 'default', position, rotation, { fov = 45 } = {}) {
+        this.name = name;
+
+        this.#handle = mp.cameras.new(this.name, position, rotation, fov);
+        this.setActive(true);
+    }
+
+    setRenderScriptCams(render = true, ease = false, easeTime = 0, p3 = false, p4 = false, p5 = undefined) {
+        mp.game.cam.renderScriptCams(render, ease, parseInt(easeTime), p3, p4, p5);
+    }
+
+    setPointAtCoord(x, y, z) {
+        this.#handle.pointAtCoord(parseInt(x), parseInt(y), parseInt(z));
+    }
+
+    setActive(status) {
+        this.#handle.setActive(status);
+    }
+}
+
+export default Camera;

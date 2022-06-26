@@ -1,6 +1,7 @@
 
 // IMPORTS
 
+import User from "../modules/api/User.mjs";
 import Auth from "./auth.mjs";
 
 // CODE
@@ -38,4 +39,12 @@ mp.events.addCommand('login', async (player, _, username, password) => {
 mp.events.addCommand('veh', (player, model) => {
     let vehicle = mp.vehicles.new(mp.joaat(model), new mp.Vector3(player.position.x, player.position.y, player.position.z));
     player.putIntoVehicle(vehicle, 0);
+});
+
+mp.events.addCommand('health', (player, number) => {
+    User.setHealth(player, number);
+});
+
+mp.events.addCommand('armor', (player, number) => {
+    User.setArmour(player, number);
 });
