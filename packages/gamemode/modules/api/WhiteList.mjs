@@ -6,7 +6,7 @@ import { db } from "../utils/sequelize.mjs";
 
 // CODE
 
-class WTL {
+class WhiteListMethods {
     static async loadInDataBase() {
         Terminal.sendDebugDetailed('WhiteList.load();');
 
@@ -50,7 +50,7 @@ class WhiteList {
     static list = [];
 
     static async load() {
-        if(mp.config.isWhiteList) await WTL.loadDataBase();
+        if(mp.config.isWhiteList) await WhiteListMethods.loadDataBase();
     }
 
     static async get(socialClubID) {
@@ -61,7 +61,7 @@ class WhiteList {
         let found = await this.get(socialClubID);
         if(found) return Terminal.sendInfo('[WhiteList] Этот SocialClub уже состоит в списке.');
 
-        await WTL.addToDataBase(socialClubID);
+        await WhiteListMethods.addToDataBase(socialClubID);
         this.list.push(parseInt(socialClubID));
 
         // console.log(WhiteList.list);
@@ -70,7 +70,7 @@ class WhiteList {
     static async remove(socialClubID) {
         let foundIndex = await this.get(socialClubID);
         if(foundIndex != -1) {
-            await WTL.removeInDataBase(socialClubID);
+            await WhiteListMethods.removeInDataBase(socialClubID);
             return this.list.slice(foundIndex, 1);
         }
 
