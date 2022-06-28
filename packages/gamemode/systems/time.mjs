@@ -1,6 +1,7 @@
 
 // IMPORTS
 
+import Method from "../modules/methods.mjs";
 import Terminal from "../modules/terminal.mjs";
 import { db } from "../modules/utils/sequelize.mjs";
 
@@ -9,7 +10,7 @@ import { db } from "../modules/utils/sequelize.mjs";
 let minuteInSeconds = 15;
 
 let dayNames = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-let monthNames = [];
+let monthNames = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Август', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
 
 export class TimeMethods {
     static getLeapYear(number) {
@@ -21,19 +22,19 @@ export class TimeMethods {
     }
 
     static getMonth() {
-        return parseInt(Time.month);
+        return Method.digitFormat(parseInt(Time.month));
     }
 
     static getDay() {
-        return parseInt(Time.day);
+        return Method.digitFormat(parseInt(Time.day));
     }
 
     static getHour() {
-        return parseInt(Time.hour);
+        return Method.digitFormat(parseInt(Time.hour));
     }
 
     static getMinute() {
-        return parseInt(Time.minute);
+        return Method.digitFormat(parseInt(Time.minute));
     }
 
     // static getSecond() {
@@ -43,6 +44,11 @@ export class TimeMethods {
     static getDayName() {
         let date = new Date(parseInt(Time.year), parseInt(Time.month - 1), parseInt(Time.day));
         return dayNames[date.getDay()];
+    }
+
+    static getMonthName() {
+        let date = new Date(parseInt(Time.year), parseInt(Time.month - 1), parseInt(Time.day));
+        return monthNames[date.getMonth()];
     }
 }
 
